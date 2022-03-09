@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CategoryClickListener {
     private lateinit var recycler: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         recycler = findViewById(R.id.recycler)
         recycler.layoutManager = LinearLayoutManager(this)
-        recycler.adapter = CategoryAdapter(categories)
+        recycler.adapter = CategoryAdapter(categories, this)
     }
 
 
@@ -23,4 +23,9 @@ class MainActivity : AppCompatActivity() {
         Category(3, "Животные", 12648254),
         Category(4, "Арифметика", 5890798)
     )
+
+    override fun categoryClick(id: Int) {
+        val category = categories.find { it.id == id }
+        println("${category?.name}")
+    }
 }

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CategoryViewHolder(
     itemView: View,
+    private val listener: CategoryClickListener,
 ) : RecyclerView.ViewHolder(itemView) {
     fun setContent(category: Category) {
         val colorHex = "#${category.color.toString(16)}"
@@ -17,11 +18,16 @@ class CategoryViewHolder(
 
         val categoryTextView = itemView.findViewById<TextView>(R.id.category)
         categoryTextView.text = category.name
+
+        itemView.setOnClickListener {
+            listener.categoryClick(category.id)
+        }
     }
 }
 
 class CategoryAdapter(
     private val categories: List<Category>,
+    private val listener: CategoryClickListener,
 ) : RecyclerView.Adapter<CategoryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         return CategoryViewHolder(
@@ -29,7 +35,8 @@ class CategoryAdapter(
                 R.layout.category_item,
                 parent,
                 false
-            )
+            ),
+            listener
         )
     }
 
