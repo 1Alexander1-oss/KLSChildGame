@@ -1,5 +1,6 @@
 package com.nyx.klschildgame
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,16 +17,12 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
         recycler.adapter = CategoryAdapter(categories, this)
     }
 
-
-    private val categories = listOf(
-        Category(1, "Цвета", 16766720),
-        Category(2, "Цифры", 3714781),
-        Category(3, "Животные", 12648254),
-        Category(4, "Арифметика", 5890798)
-    )
-
     override fun categoryClick(id: Int) {
-        val category = categories.find { it.id == id }
-        println("${category?.name}")
+        if (id == ARITHMETICS_CATEGORY_ID) {
+        } else {
+            val intent = Intent(this, ImageCategoryActivity::class.java)
+            startActivityForResult(intent, 0)
+        }
+
     }
 }
