@@ -11,7 +11,17 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        tools:background="@color/purple_200" />
+        tools:background="@color/purple_200"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/slide_number"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="300sp"
+        tools:text="1" />
 
     <TextView
         android:id="@+id/slide_name"

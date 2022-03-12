@@ -2,6 +2,7 @@ package com.nyx.klschildgame
 
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -9,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 class ImageCategoryActivity : AppCompatActivity() {
     private lateinit var slideImage: ImageView
+    private lateinit var slideNumber: TextView
     private lateinit var slideName: TextView
     private lateinit var buttonNext: Button
     private lateinit var buttonBack: Button
@@ -24,6 +26,7 @@ class ImageCategoryActivity : AppCompatActivity() {
         setContentView(R.layout.activity_image_category)
 
         slideImage = findViewById(R.id.slide_image)
+        slideNumber = findViewById(R.id.slide_number)
         slideName = findViewById(R.id.slide_name)
         buttonNext = findViewById(R.id.button_next)
         buttonBack = findViewById(R.id.button_back)
@@ -33,6 +36,8 @@ class ImageCategoryActivity : AppCompatActivity() {
             dataSource = colorSlides
         } else if (categoryId == ANIMALS_CATEGORY_ID) {
             dataSource = animalSlides
+        } else if (categoryId == NUMBER_CATEGORY_ID) {
+            dataSource = numberSlides
         }
 
         displaySlide(currentSlideIndex)
@@ -69,6 +74,11 @@ class ImageCategoryActivity : AppCompatActivity() {
         } else if (currentSlide is PictureSlide) {
             val pictureResId = currentSlide.resourceId
             slideImage.setImageResource(pictureResId)
+        } else if (currentSlide is NumberSlide) {
+            val number = currentSlide.number
+            slideImage.visibility = View.GONE
+            slideNumber.visibility = View.VISIBLE
+            slideNumber.text = number.toString()
         }
     }
 }

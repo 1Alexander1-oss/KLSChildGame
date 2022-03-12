@@ -13,3 +13,9 @@ data class PictureSlide(
     override val name: String,
     val resourceId: Int,
 ) : Slide(id, name)
+
+data class NumberSlide(
+    override val id: Int,
+    override val name: String,
+    val number: Int,
+) : Slide(id, name)
