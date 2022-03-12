@@ -17,7 +17,7 @@ val categories = listOf(
 )
 
 val colorSlides = listOf(
-    ColorSlide(RED_COLOR_ID, "Красный", 16717858),
-    ColorSlide(GREEN_COLOR_ID, "Зелёный", 65280),
-    ColorSlide(BLUE_COLOR_ID, "Синий", 255)
+    ColorSlide(RED_COLOR_ID, "Красный", "FF0000"),
+    ColorSlide(GREEN_COLOR_ID, "Зелёный", "00FF00"),
+    ColorSlide(BLUE_COLOR_ID, "Синий", "0000FF")
 )
