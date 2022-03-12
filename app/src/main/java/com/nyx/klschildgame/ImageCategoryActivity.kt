@@ -13,7 +13,7 @@ class ImageCategoryActivity : AppCompatActivity() {
     private lateinit var buttonNext: Button
     private lateinit var buttonBack: Button
     private var currentSlideIndex = 0
-    private var dataSource: List<ColorSlide> = listOf()
+    private var dataSource: List<Slide> = listOf()
 
     companion object {
         const val ID_KEY = "ID_KEY"
@@ -31,6 +31,8 @@ class ImageCategoryActivity : AppCompatActivity() {
         val categoryId = intent.getIntExtra(ID_KEY, 0)
         if (categoryId == COLOR_CATEGORY_ID) {
             dataSource = colorSlides
+        } else if (categoryId == ANIMALS_CATEGORY_ID) {
+            dataSource = animalSlides
         }
 
         displaySlide(currentSlideIndex)
@@ -60,8 +62,13 @@ class ImageCategoryActivity : AppCompatActivity() {
         val currentSlide = dataSource[currentIndex]
 
         slideName.text = currentSlide.name
-        val color = currentSlide.color
 
-        slideImage.setBackgroundColor(Color.parseColor("#$color"))
+        if (currentSlide is ColorSlide) {
+            val color = currentSlide.color
+            slideImage.setBackgroundColor(Color.parseColor("#$color"))
+        } else if (currentSlide is PictureSlide) {
+            val pictureResId = currentSlide.resourceId
+            slideImage.setImageResource(pictureResId)
+        }
     }
 }

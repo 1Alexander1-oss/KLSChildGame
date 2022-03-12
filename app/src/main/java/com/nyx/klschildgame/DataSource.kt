@@ -8,6 +8,12 @@ const val ARITHMETICS_CATEGORY_ID = 4
 const val RED_COLOR_ID = 1
 const val GREEN_COLOR_ID = 2
 const val BLUE_COLOR_ID = 3
+const val YELLOW_COLOR_ID = 4
+
+const val DOG_SLIDE_ID = 1
+const val CAT_SLIDE_ID = 2
+const val HAMSTER_SLIDE_ID = 3
+
 
 val categories = listOf(
     Category(COLOR_CATEGORY_ID, "Цвета", 16766720),
@@ -19,5 +25,12 @@ val categories = listOf(
 val colorSlides = listOf(
     ColorSlide(RED_COLOR_ID, "Красный", "FF0000"),
     ColorSlide(GREEN_COLOR_ID, "Зелёный", "00FF00"),
-    ColorSlide(BLUE_COLOR_ID, "Синий", "0000FF")
+    ColorSlide(BLUE_COLOR_ID, "Синий", "0000FF"),
+    ColorSlide(YELLOW_COLOR_ID, "Жёлтый", "FFFF00")
+)
+
+val animalSlides = listOf(
+    PictureSlide(DOG_SLIDE_ID, "Собака", R.drawable.dog),
+    PictureSlide(CAT_SLIDE_ID, "Кот", R.drawable.cat),
+    PictureSlide(HAMSTER_SLIDE_ID, "Хомяк", R.drawable.hamster)
 )
