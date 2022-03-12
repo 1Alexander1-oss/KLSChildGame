@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">KLSChildGame</string>
+    <string name="back_button"><![CDATA[<-]]></string>
+    <string name="next_button"><![CDATA[->]]></string>
 </resources>

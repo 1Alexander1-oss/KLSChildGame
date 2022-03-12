@@ -4,6 +4,7 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,6 +19,9 @@ class CategoryViewHolder(
 
         val categoryTextView = itemView.findViewById<TextView>(R.id.category)
         categoryTextView.text = category.name
+
+        val picture = itemView.findViewById<ImageView>(R.id.category_picture)
+        picture.setImageResource(category.pictureResId)
 
         itemView.setOnClickListener {
             listener.categoryClick(category.id)
