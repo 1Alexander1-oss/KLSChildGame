@@ -31,8 +31,8 @@
         android:gravity="center"
         android:paddingVertical="48dp"
         android:textSize="48sp"
-        tools:text="Image name"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        tools:text="Image name" />
 
     <LinearLayout
         android:layout_width="match_parent"

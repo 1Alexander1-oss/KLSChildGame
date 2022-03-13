@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity(), CategoryClickListener {
 
     override fun categoryClick(id: Int) {
         if (id == ARITHMETICS_CATEGORY_ID) {
+            val intent = Intent(this, ArithmeticActivity::class.java)
+            startActivity(intent)
         } else {
             val intent = Intent(this, ImageCategoryActivity::class.java)
             intent.putExtra(ImageCategoryActivity.ID_KEY, id)

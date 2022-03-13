@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KLSChildGame">
         <activity
+            android:name=".ArithmeticActivity"
+            android:exported="false" />
+        <activity
             android:name=".ImageCategoryActivity"
             android:exported="false" />
         <activity
