@@ -2,4 +2,25 @@
     <string name="app_name">KLSChildGame</string>
     <string name="back_button"><![CDATA[<-]]></string>
     <string name="next_button"><![CDATA[->]]></string>
+
+    <plurals name="turtle">
+        <item quantity="one">Черепаха</item>
+        <item quantity="few">Черепахи</item>
+        <item quantity="many">Черепах</item>
+        <item quantity="other">Черепаха</item>
+    </plurals>
+
+    <plurals name="orange">
+        <item quantity="one">Апельсин</item>
+        <item quantity="few">Апельсина</item>
+        <item quantity="many">Апельсинов</item>
+        <item quantity="other">Апельсин</item>
+    </plurals>
+
+    <plurals name="apple">
+        <item quantity="one">Яблоко</item>
+        <item quantity="few">Яблока</item>
+        <item quantity="many">Яблок</item>
+        <item quantity="other">Яблоко</item>
+    </plurals>
 </resources>

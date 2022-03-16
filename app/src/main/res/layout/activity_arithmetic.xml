@@ -11,22 +11,52 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/left_term"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="44sp"
-            tools:text="3" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/right_term"
+            <TextView
+                android:id="@+id/left_term"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="44sp"
+                tools:text="3" />
+
+            <TextView
+                android:id="@+id/left_auxiliary_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textStyle="bold"
+                tools:text="Три черепашки" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="end"
-            android:textSize="44sp"
-            tools:text="3" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/right_term"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:textSize="44sp"
+                tools:text="3" />
+
+            <TextView
+                android:id="@+id/right_auxiliary_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:textStyle="bold"
+                tools:text="Две черепашки" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
@@ -62,8 +92,50 @@
             android:numColumns="3" />
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/R.id.outcome"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:gravity="center"
+        android:textSize="32sp"
+        tools:text="ИТОГ" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/R.id.left_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+        <Button
+            android:id="@+id/R.id.center_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+        <Button
+            android:id="@+id/R.id.right_option"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/R.id.refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp" />
 
 </LinearLayout>

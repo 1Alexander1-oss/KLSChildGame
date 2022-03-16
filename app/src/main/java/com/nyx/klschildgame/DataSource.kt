@@ -25,7 +25,7 @@ const val JAGUAR_SLIDE_ID = 6
 const val LION_SLIDE_ID = 7
 const val OWL_SLIDE_ID = 8
 const val PIG_SLIDE_ID = 9
-const val TIGER_SLIDE_ID =10
+const val TIGER_SLIDE_ID = 10
 
 
 const val NULL_SLIDE_ID = 0
@@ -86,4 +86,10 @@ val numberSlides = listOf(
     NumberSlide(EIGHT_SLIDE_ID, "Во - семь", 8),
     NumberSlide(NINE_SLIDE_ID, "Де - вять", 9),
     NumberSlide(TEN_SLIDE_ID, "Де - сять", 10),
+)
+
+val arithmeticSubjects = listOf(
+    ArithmeticSubject(R.drawable.turtle, Noun.FEMININE, R.plurals.turtle),
+    ArithmeticSubject(R.drawable.apple, Noun.NEUTER, R.plurals.apple),
+    ArithmeticSubject(R.drawable.orange, Noun.MASCULINE, R.plurals.orange),
 )
