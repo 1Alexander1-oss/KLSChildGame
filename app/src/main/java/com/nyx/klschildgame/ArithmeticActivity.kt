@@ -1,6 +1,7 @@
 package com.nyx.klschildgame
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.GridView
 import android.widget.TextView
@@ -18,6 +19,7 @@ class ArithmeticActivity : AppCompatActivity() {
     private lateinit var leftOption: Button
     private lateinit var centerOption: Button
     private lateinit var rightOption: Button
+    private lateinit var outcomeImages: GridView
 
     private val firstTerm = getRandomTerm()
     private val secondTerm = getRandomTerm()
@@ -38,20 +40,28 @@ class ArithmeticActivity : AppCompatActivity() {
         leftOption = findViewById(R.id.left_option)
         centerOption = findViewById(R.id.center_option)
         rightOption = findViewById(R.id.right_option)
+        outcomeImages = findViewById(R.id.outcome_images)
 
         setupAdapters(firstTerm, secondTerm)
+        setOutcomeAdapter()
         setAuxiliaryText(firstTerm, secondTerm)
         setButtonText()
-        setOutcomeText()
+        setOutcome()
+
 
         leftTerm.text = firstTerm.toString()
         rightTerm.text = secondTerm.toString()
 
-        leftOption.setOnClickListener {}
-        rightOption.setOnClickListener {}
-        centerOption.setOnClickListener {}
-
+        leftOption.setOnClickListener { makeAnswerVisible() }
+        rightOption.setOnClickListener { makeAnswerVisible() }
+        centerOption.setOnClickListener { makeAnswerVisible() }
     }
+
+    private fun makeAnswerVisible() {
+        outcomeText.visibility = View.VISIBLE
+        outcomeImages.visibility = View.VISIBLE
+    }
+
 
     private fun getRandomTerm(): Int {
         return Random.nextInt(1, 6)
@@ -70,15 +80,25 @@ class ArithmeticActivity : AppCompatActivity() {
         return result
     }
 
-    private fun setOutcomeText() {
+    private fun setOutcome() {
         val firstPart = rightAnswer
         val secondPart = resources.getQuantityString(
             arithmeticSubject.stringResourceId,
             firstPart,
             firstPart
         )
-
         outcomeText.text = "$rightAnswer $secondPart"
+
+    }
+
+    private fun setOutcomeAdapter() {
+        val outcomeAdapter = ArithmeticImageItemAdapter(
+            this,
+            rightAnswer,
+            arithmeticSubject.imageResourceId,
+        )
+
+        outcomeImages.adapter = outcomeAdapter
     }
 
     private fun setAuxiliaryText(firstTerm: Int, secondTerm: Int) {

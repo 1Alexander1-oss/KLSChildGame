@@ -98,14 +98,30 @@
             android:numColumns="3" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/outcome_text"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:gravity="center"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        tools:text="ИТОГ" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0">
+
+        <TextView
+            android:id="@+id/outcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="88dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:text="ИТОГ" />
+
+        <GridView
+            android:id="@+id/outcome_images"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:numColumns="5"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
 
 
     <LinearLayout
