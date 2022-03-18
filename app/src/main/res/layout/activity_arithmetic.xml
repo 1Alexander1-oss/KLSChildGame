@@ -104,6 +104,7 @@
         android:layout_height="88dp"
         android:gravity="center"
         android:textSize="32sp"
+        android:textStyle="bold"
         tools:text="ИТОГ" />
 
 
@@ -150,7 +151,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
-        android:textSize="32sp"
-        android:text="СЛЕДУЮЩИЙ"/>
+        android:text="СЛЕДУЮЩИЙ"
+        android:textSize="32sp" />
 
 </LinearLayout>

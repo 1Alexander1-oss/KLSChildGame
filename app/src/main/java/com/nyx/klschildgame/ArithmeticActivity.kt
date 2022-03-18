@@ -21,6 +21,7 @@ class ArithmeticActivity : AppCompatActivity() {
 
     private val firstTerm = getRandomTerm()
     private val secondTerm = getRandomTerm()
+    private val rightAnswer = firstTerm + secondTerm
     private val arithmeticSubject = arithmeticSubjects.random()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +42,7 @@ class ArithmeticActivity : AppCompatActivity() {
         setupAdapters(firstTerm, secondTerm)
         setAuxiliaryText(firstTerm, secondTerm)
         setButtonText()
+        setOutcomeText()
 
         leftTerm.text = firstTerm.toString()
         rightTerm.text = secondTerm.toString()
@@ -68,6 +70,16 @@ class ArithmeticActivity : AppCompatActivity() {
         return result
     }
 
+    private fun setOutcomeText() {
+        val firstPart = rightAnswer
+        val secondPart = resources.getQuantityString(
+            arithmeticSubject.stringResourceId,
+            firstPart,
+            firstPart
+        )
+
+        outcomeText.text = "$rightAnswer $secondPart"
+    }
 
     private fun setAuxiliaryText(firstTerm: Int, secondTerm: Int) {
         val firstTermNoun = resources.getQuantityString(
@@ -109,9 +121,8 @@ class ArithmeticActivity : AppCompatActivity() {
     }
 
     private fun setButtonText() {
-        val rightAnswer = firstTerm + secondTerm
         val wrongAnswer1 = getRandomExcluding(listOf(rightAnswer))
-        val wrongAnswer2 = getRandomExcluding(listOf(rightAnswer,wrongAnswer1))
+        val wrongAnswer2 = getRandomExcluding(listOf(rightAnswer, wrongAnswer1))
 
         val buttonValues = mutableListOf(
             rightAnswer,
@@ -127,4 +138,5 @@ class ArithmeticActivity : AppCompatActivity() {
         centerOption.text = centralValue.toString()
         rightOption.text = rightValue.toString()
     }
+
 }
