@@ -93,7 +93,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/R.id.outcome"
+        android:id="@+id/outcome_text"
         android:layout_width="match_parent"
         android:layout_height="88dp"
         android:gravity="center"
@@ -106,7 +106,7 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/R.id.left_option"
+            android:id="@+id/left_option"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -114,7 +114,7 @@
             android:paddingRight="12dp" />
 
         <Button
-            android:id="@+id/R.id.center_option"
+            android:id="@+id/center_option"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -122,7 +122,7 @@
             android:paddingRight="12dp" />
 
         <Button
-            android:id="@+id/R.id.right_option"
+            android:id="@+id/right_option"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -132,7 +132,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/R.id.refresh"
+        android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="12dp"
