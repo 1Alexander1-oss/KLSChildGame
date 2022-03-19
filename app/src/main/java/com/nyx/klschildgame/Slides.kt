@@ -12,6 +12,7 @@ data class PictureSlide(
     override val id: Int,
     override val name: String,
     val resourceId: Int,
+    val soundId: Int
 ) : Slide(id, name)
 
 data class NumberSlide(

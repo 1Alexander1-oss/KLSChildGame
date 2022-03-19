@@ -62,16 +62,16 @@ val colorSlides = listOf(
 )
 
 val animalSlides = listOf(
-    PictureSlide(DOG_SLIDE_ID, "Со - ба - ка", R.drawable.dog),
-    PictureSlide(CAT_SLIDE_ID, "Кот", R.drawable.cat),
-    PictureSlide(HAMSTER_SLIDE_ID, "Хо - мяк", R.drawable.hamster),
-    PictureSlide(BEAVER_SLIDE_ID, "Бо - бёр", R.drawable.beaver),
-    PictureSlide(HEDGEHOG_SLIDE_ID, "Ёж", R.drawable.hedgehog),
-    PictureSlide(JAGUAR_SLIDE_ID, "Я - гу - ар", R.drawable.jaguar),
-    PictureSlide(LION_SLIDE_ID, "Лев", R.drawable.lion),
-    PictureSlide(OWL_SLIDE_ID, "Фи - лин", R.drawable.owl),
-    PictureSlide(PIG_SLIDE_ID, "По - ро - сё - нок", R.drawable.pig),
-    PictureSlide(TIGER_SLIDE_ID, "Тигр", R.drawable.tiger),
+    PictureSlide(DOG_SLIDE_ID, "Со - ба - ка", R.drawable.dog, R.raw.bark),
+    PictureSlide(CAT_SLIDE_ID, "Кот", R.drawable.cat, R.raw.mixkit),
+    PictureSlide(HAMSTER_SLIDE_ID, "Хо - мяк", R.drawable.hamster, R.raw.homyak),
+    PictureSlide(BEAVER_SLIDE_ID, "Бо - бёр", R.drawable.beaver, R.raw.bobr),
+    PictureSlide(HEDGEHOG_SLIDE_ID, "Ёж", R.drawable.hedgehog, R.raw.hedgehog),
+    PictureSlide(JAGUAR_SLIDE_ID, "Я - гу - ар", R.drawable.jaguar, R.raw.tigr),
+    PictureSlide(LION_SLIDE_ID, "Лев", R.drawable.lion, R.raw.lev),
+    PictureSlide(OWL_SLIDE_ID, "Фи - лин", R.drawable.owl, R.raw.filin),
+    PictureSlide(PIG_SLIDE_ID, "По - ро - сё - нок", R.drawable.pig, R.raw.porosenok),
+    PictureSlide(TIGER_SLIDE_ID, "Тигр", R.drawable.tiger, R.raw.tigr),
 )
 
 val numberSlides = listOf(
