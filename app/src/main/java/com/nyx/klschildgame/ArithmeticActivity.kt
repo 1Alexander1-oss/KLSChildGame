@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.GridView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.util.*
 import kotlin.random.Random
 
 class ArithmeticActivity : AppCompatActivity() {
@@ -72,12 +73,13 @@ class ArithmeticActivity : AppCompatActivity() {
     }
 
     private fun setQuestion() {
+        val manyItemsNumber = 10
         val question = resources.getQuantityString(
             arithmeticSubject.stringResourceId,
-            firstTerm
+            manyItemsNumber,
         )
 
-        outcomeText.text = "Сколько $question получится?"
+        outcomeText.text = "Сколько ${question.lowercase(Locale.getDefault())} получится?"
     }
 
     private fun showAnswer() {
