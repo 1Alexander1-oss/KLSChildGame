@@ -22,10 +22,10 @@ class ArithmeticActivity : AppCompatActivity() {
     private lateinit var outcomeImages: GridView
     private lateinit var refreshButton: Button
 
-    private val firstTerm = getRandomTerm()
-    private val secondTerm = getRandomTerm()
-    private val rightAnswer = firstTerm + secondTerm
-    private val arithmeticSubject = arithmeticSubjects.random()
+    private var firstTerm = 0
+    private var secondTerm = 0
+    private val rightAnswer get() = firstTerm + secondTerm
+    private var arithmeticSubject = arithmeticSubjects.random()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,18 +44,31 @@ class ArithmeticActivity : AppCompatActivity() {
         outcomeImages = findViewById(R.id.outcome_images)
         refreshButton = findViewById(R.id.refresh)
 
+        setScreenContent()
+
+        leftOption.setOnClickListener { showAnswer() }
+        rightOption.setOnClickListener { showAnswer() }
+        centerOption.setOnClickListener { showAnswer() }
+
+        refreshButton.setOnClickListener {
+            outcomeImages.visibility = View.INVISIBLE
+            setScreenContent()
+        }
+    }
+
+    private fun setScreenContent() {
+        arithmeticSubject = arithmeticSubjects.random()
+        firstTerm = getRandomTerm()
+        secondTerm = getRandomTerm()
+
+        leftTerm.text = firstTerm.toString()
+        rightTerm.text = secondTerm.toString()
+
         setupAdapters(firstTerm, secondTerm)
         setOutcomeAdapter()
         setAuxiliaryText(firstTerm, secondTerm)
         setButtonText()
         setQuestion()
-
-        leftTerm.text = firstTerm.toString()
-        rightTerm.text = secondTerm.toString()
-
-        leftOption.setOnClickListener { showAnswer() }
-        rightOption.setOnClickListener { showAnswer() }
-        centerOption.setOnClickListener { showAnswer() }
     }
 
     private fun setQuestion() {
@@ -164,5 +177,4 @@ class ArithmeticActivity : AppCompatActivity() {
         centerOption.text = centralValue.toString()
         rightOption.text = rightValue.toString()
     }
-
 }
