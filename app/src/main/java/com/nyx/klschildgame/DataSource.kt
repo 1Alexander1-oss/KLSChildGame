@@ -42,10 +42,10 @@ const val TEN_SLIDE_ID = 10
 
 
 val categories = listOf(
-    Category(COLOR_CATEGORY_ID, "Цвета", 13559248, R.drawable.turtle, "F3F0D7"),
-    Category(NUMBER_CATEGORY_ID, "Цифры", 10089405, R.drawable.terra,"BCFFB9"),
-    Category(ANIMALS_CATEGORY_ID, "Животные", 13825733, R.drawable.kavala,"F5FDB0"),
-    Category(ARITHMETICS_CATEGORY_ID, "Арифметика", 16185300, R.drawable.lama,"F7E6AD")
+    Category(COLOR_CATEGORY_ID, "Цвета", 16184550, R.drawable.turtle, "F3F0D7"),
+    Category(NUMBER_CATEGORY_ID, "Цифры", 15590810, R.drawable.terra,"BCFFB9"),
+    Category(ANIMALS_CATEGORY_ID, "Животные", 14009429, R.drawable.kavala,"F5FDB0"),
+    Category(ARITHMETICS_CATEGORY_ID, "Арифметика", 16636730, R.drawable.lama,"F7E6AD")
 )
 
 val colorSlides = listOf(
