@@ -42,10 +42,10 @@ const val TEN_SLIDE_ID = 10
 
 
 val categories = listOf(
-    Category(COLOR_CATEGORY_ID, "Цвета", 16766720, R.drawable.turtle),
-    Category(NUMBER_CATEGORY_ID, "Цифры", 3714781, R.drawable.terra),
-    Category(ANIMALS_CATEGORY_ID, "Животные", 12648254, R.drawable.kavala),
-    Category(ARITHMETICS_CATEGORY_ID, "Арифметика", 5890798, R.drawable.lama)
+    Category(COLOR_CATEGORY_ID, "Цвета", 13559248, R.drawable.turtle, "F3F0D7"),
+    Category(NUMBER_CATEGORY_ID, "Цифры", 10089405, R.drawable.terra,"BCFFB9"),
+    Category(ANIMALS_CATEGORY_ID, "Животные", 13825733, R.drawable.kavala,"F5FDB0"),
+    Category(ARITHMETICS_CATEGORY_ID, "Арифметика", 16185300, R.drawable.lama,"F7E6AD")
 )
 
 val colorSlides = listOf(
@@ -69,7 +69,7 @@ val animalSlides = listOf(
     PictureSlide(HEDGEHOG_SLIDE_ID, "Ёж", R.drawable.hedgehog, R.raw.hedgehog),
     PictureSlide(JAGUAR_SLIDE_ID, "Я - гу - ар", R.drawable.jaguar, R.raw.tigr),
     PictureSlide(LION_SLIDE_ID, "Лев", R.drawable.lion, R.raw.lev),
-    PictureSlide(OWL_SLIDE_ID, "Фи - лин", R.drawable.owl, R.raw.filin),
+    PictureSlide(OWL_SLIDE_ID, "Фи - лин", R.drawable.filin, R.raw.filin),
     PictureSlide(PIG_SLIDE_ID, "По - ро - сё - нок", R.drawable.pig, R.raw.porosenok),
     PictureSlide(TIGER_SLIDE_ID, "Тигр", R.drawable.tiger, R.raw.tigr),
 )

@@ -1,9 +1,11 @@
 package com.nyx.klschildgame
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.GridView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
@@ -22,6 +24,7 @@ class ArithmeticActivity : AppCompatActivity() {
     private lateinit var rightOption: Button
     private lateinit var outcomeImages: GridView
     private lateinit var refreshButton: Button
+    private lateinit var arithmeticScreenRoot: LinearLayout
 
     private var firstTerm = 0
     private var secondTerm = 0
@@ -44,6 +47,7 @@ class ArithmeticActivity : AppCompatActivity() {
         rightOption = findViewById(R.id.right_option)
         outcomeImages = findViewById(R.id.outcome_images)
         refreshButton = findViewById(R.id.refresh)
+        arithmeticScreenRoot = findViewById(R.id.arithmetic_screen_root)
 
         setScreenContent()
 
@@ -55,6 +59,9 @@ class ArithmeticActivity : AppCompatActivity() {
             outcomeImages.visibility = View.INVISIBLE
             setScreenContent()
         }
+        val category = categories.find { it.id == ARITHMETICS_CATEGORY_ID }
+        val backgroundColor = category?.backgroundColor
+        arithmeticScreenRoot.setBackgroundColor(Color.parseColor("#$backgroundColor"))
     }
 
     private fun setScreenContent() {

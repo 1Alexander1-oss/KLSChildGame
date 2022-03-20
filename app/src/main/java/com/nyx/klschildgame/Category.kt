@@ -5,5 +5,6 @@ data class Category(
     val name: String,
     val color: Int,
     val pictureResId: Int,
+    val backgroundColor: String
 
 )

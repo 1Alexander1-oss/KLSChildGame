@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/arithmetic_screen_root"
     tools:context=".ArithmeticActivity">
 
     <LinearLayout
@@ -109,9 +110,9 @@
             android:layout_width="match_parent"
             android:layout_height="88dp"
             android:gravity="center"
-            tools:text="Вопрос"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="Вопрос" />
 
         <GridView
             android:id="@+id/outcome_images"

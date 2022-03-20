@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -18,6 +19,7 @@ class ImageCategoryActivity : AppCompatActivity() {
     private var currentSlideIndex = 0
     private var dataSource: List<Slide> = listOf()
     private var mediaPlayer: MediaPlayer? = null
+    private lateinit var screenRootView: LinearLayout
 
     companion object {
         const val ID_KEY = "ID_KEY"
@@ -27,6 +29,7 @@ class ImageCategoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_category)
 
+        screenRootView = findViewById(R.id.screen_root_view)
         slideImage = findViewById(R.id.slide_image)
         slideNumber = findViewById(R.id.slide_number)
         slideName = findViewById(R.id.slide_name)
@@ -41,6 +44,11 @@ class ImageCategoryActivity : AppCompatActivity() {
         } else if (categoryId == NUMBER_CATEGORY_ID) {
             dataSource = numberSlides
         }
+
+        val category = categories.firstOrNull { it.id == categoryId }
+        val backgroundColor = category?.backgroundColor
+        screenRootView.setBackgroundColor(Color.parseColor("#$backgroundColor"))
+
 
         displaySlide(currentSlideIndex)
 
